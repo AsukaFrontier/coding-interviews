@@ -2,11 +2,11 @@ package ReverseArrayList;
 
 import java.util.ArrayList;
 public class Solution {
-    public static ArrayList<Integer> printListFromTailToHead(ListNode listNode)
+    public ArrayList<Integer> printListFromTailToHead(ListNode listNode)
     {
         return reverseArrayList(browseListNode(listNode));
     }
-    private static ArrayList<Integer> browseListNode(ListNode listNode)
+    private ArrayList<Integer> browseListNode(ListNode listNode)
     {
         ArrayList<Integer> al_Int=new ArrayList<Integer>();
         if(listNode==null)
@@ -19,7 +19,7 @@ public class Solution {
         al_Int.add(listNode.val);
         return al_Int;
     }
-    private static ArrayList<Integer> reverseArrayList(ArrayList<Integer> arrayList)
+    private ArrayList<Integer> reverseArrayList(ArrayList<Integer> arrayList)
     {
         for(int i=0;i<arrayList.size()/2;i++)
         {
@@ -42,7 +42,7 @@ public class Solution {
     //------------------------------------------//
     public static void main(String[] args)
     {
-        //Solution sol=new Solution();
+        Solution sol=new Solution();
         ListNode listNode=new ListNode(67);
         ListNode listNode2=new ListNode(0);
         ListNode listNode3=new ListNode(24);
@@ -51,7 +51,7 @@ public class Solution {
         listNode2.next=listNode3;
         listNode3.next=listNode4;
         //listNode=null;
-        ArrayList<Integer> al=printListFromTailToHead(listNode);
+        ArrayList<Integer> al=sol.printListFromTailToHead(listNode);
         for(Integer i: al)
             System.out.println(i);
     }
