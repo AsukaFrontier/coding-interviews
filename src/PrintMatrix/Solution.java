@@ -12,7 +12,23 @@ public class Solution {
             return null;
         //
         ArrayList<Integer> ints= new ArrayList<>();
+        //
         return ints;
+    }
+    private int[][] turnMatrixLeft(int[][] matrix)
+    {
+        int[][] new_matrix= new int[matrix.length][matrix[0].length];
+        for(int i=0;i<matrix.length;i++)
+        {
+            int[] row_old_matrix=new int[matrix[0].length];
+            for(int j=0;j<matrix[0].length;j++)
+            {
+                //
+                row_old_matrix[j]=matrix[i][j];
+            }
+        }
+        //
+        return matrix;
     }
     private void printBlockMatrix(int[][] matrix)
     {
