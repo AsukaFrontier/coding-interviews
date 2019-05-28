@@ -4,6 +4,7 @@ public class Solution {
     public boolean hasSubTree(TreeNode root1, TreeNode root2)
     {
         //
+        return false;
     }
     private class TreeNode
     {
