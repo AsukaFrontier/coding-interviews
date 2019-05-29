@@ -6,6 +6,8 @@ public class Solution {
     public ArrayList<Integer> printFromTopToBottom(TreeNode root)
     {
         //
+        ArrayList alist= new ArrayList();
+        return alist;
     }
     private class TreeNode
     {
