@@ -3,7 +3,7 @@ package Clone;
 public class Solution {
     public RandomListNode clone(RandomListNode pHead)
     {
-        //
+        return pHead;
     }
     private class RandomListNode
     {
