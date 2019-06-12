@@ -1,52 +1,46 @@
 package FindPath;
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class Solution {
     public ArrayList<ArrayList<Integer>> findPath(TreeNode root, int target)
     {
-        int[] weights= new int[treeSize(root)];
-        boolean[] leafNodes= new boolean[treeSize(root)];
-        treeToArrays(root, weights,leafNodes);
+        ArrayList<Integer> node_path= new ArrayList<Integer>();
+        ArrayList<ArrayList<Integer>> node_paths= new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> target_node_paths= new ArrayList<ArrayList<Integer>>();
+        //
+        if(root==null)
+            return target_node_paths;
+        //
+        depthFirstSearch(root, node_path, node_paths);
+        targetPaths(root, target, node_paths, target_node_paths);
+        //
+        return target_node_paths;
     }
-    private void treeToArrays(TreeNode root, int[] weights, boolean[] leafNodes)
+    private void targetPaths(TreeNode root, int target, ArrayList<ArrayList<Integer>> node_paths, ArrayList<ArrayList<Integer>> target_node_paths)
     {
-        LinkedList<TreeNode> treeNodes= new LinkedList<>();
-        treeNodes.add(root);
-        int index=0;
-        while(!treeNodes.isEmpty())
+        //
+        for(ArrayList<Integer> aList: node_paths)
         {
-            TreeNode tree= treeNodes.removeFirst();
-            weights[index]=tree.val;
-            if(tree.left==null&&tree.right==null)
-                leafNodes[index]=true;
-            //
-            if(tree.left!=null)
-                treeNodes.add(tree.left);
-            if(tree.right!=null)
-                treeNodes.add(tree.right);
-            index++;
+            int sum=0;
+            for(int i: aList)
+                sum=sum+i;
+            if(sum==target)
+                target_node_paths.add(aList);
         }
     }
-    private void setNodePaths(TreeNode root, int[] edgeTo)
+    private void depthFirstSearch(TreeNode root, ArrayList<Integer> node_path, ArrayList<ArrayList<Integer>> node_paths)
     {
-        boolean[] marked= new boolean[treeSize(root)];
-    }
-    private int treeSize(TreeNode root)
-    {
-        int size=0;
-        LinkedList<TreeNode> tree= new LinkedList<TreeNode>();
-        tree.add(root);
-        while(!tree.isEmpty())
+        node_path.add(root.val);
+        if(root.left==null&&root.right==null)
         {
-            TreeNode head= tree.removeFirst();
-            size++;//
-            if(head.left!=null)
-                tree.add(head.left);
-            if(head.right!=null)
-                tree.add(head.right);
+            ArrayList<Integer> node_path_copy= new ArrayList<Integer>();
+            node_paths.add((ArrayList<Integer>) node_path.clone());
         }
-        return size;
+        if(root.left!=null)
+            depthFirstSearch(root.left, node_path, node_paths);
+        if(root.right!=null)
+            depthFirstSearch(root.right, node_path, node_paths);
+        node_path.remove(node_path.size()-1);
     }
     private class TreeNode
     {
@@ -73,5 +67,13 @@ public class Solution {
         tn2.right=tn3;
         tn3.left=tn4;
         tn3.right=tn5;
+        ArrayList<ArrayList<Integer>> paths= new ArrayList<ArrayList<Integer>>();
+        paths= s.findPath(tn0, 11);
+        for(ArrayList<Integer> al: paths)
+        {
+            for(int i: al)
+                System.out.print(i+" ");
+            System.out.println();
+        }
     }
 }
