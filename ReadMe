@@ -1,12 +1,12 @@
 User: AsukaFrontier
 https://www.nowcoder.com/ta/coding-interviews
 
-二维数组中的查找----------------------------SearchIn2DimensionalArray
-替换空格-------------------------------------ReplaceSpace
-从尾到头打印链表----------------------------ReverseArrayList
-重建二叉树-----------------------------------ReConstructBinaryTree
-用两个栈实现队列----------------------------StacksToQueue
-旋转数组的最小数字----------------------------MinNumberInRotateArray
+二维数组中的查找-------------------------------SearchIn2DimensionalArray
+替换空格--------------------------------------ReplaceSpace
+从尾到头打印链表------------------------------ReverseArrayList
+重建二叉树------------------------------------ReConstructBinaryTree
+用两个栈实现队列------------------------------StacksToQueue
+旋转数组的最小数字-----------------------------MinNumberInRotateArray
 斐波那契数列----------------------------------Fibonacci
 跳台阶----------------------------------------JumpFloor12
 N跳台阶---------------------------------------JumpFloor1_N
