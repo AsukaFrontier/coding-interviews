@@ -1,5 +1,4 @@
 package ReverseArrayList;
-
 import java.util.ArrayList;
 public class Solution {
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode)
@@ -30,28 +29,28 @@ public class Solution {
         }
         return arrayList;
     }
-    private static class ListNode
+    private class ListNode
     {
         int val;
-        ListNode next= null;
+        ListNode next;
         ListNode(int i)
         {
             this.val=i;
         }
     }
-    //------------------------------------------//
+    //-----------UNIT TEST-------------------------------//
     public static void main(String[] args)
     {
-        Solution sol=new Solution();
-        ListNode listNode=new ListNode(67);
-        ListNode listNode2=new ListNode(0);
-        ListNode listNode3=new ListNode(24);
-        ListNode listNode4=new ListNode(58);
+        Solution s=new Solution();
+        ListNode listNode=s.new ListNode(67);
+        ListNode listNode2=s.new ListNode(0);
+        ListNode listNode3=s.new ListNode(24);
+        ListNode listNode4=s.new ListNode(58);
         listNode.next=listNode2;
         listNode2.next=listNode3;
         listNode3.next=listNode4;
         //listNode=null;
-        ArrayList<Integer> al=sol.printListFromTailToHead(listNode);
+        ArrayList<Integer> al=s.printListFromTailToHead(listNode);
         for(Integer i: al)
             System.out.println(i);
     }
