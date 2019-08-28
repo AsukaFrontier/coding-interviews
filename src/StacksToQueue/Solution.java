@@ -3,22 +3,22 @@ import java.util.Stack;
 public class Solution {
     Stack<Integer> stack1= new Stack<Integer>();
     Stack<Integer> stack2= new Stack<Integer>();
-
-    public void push(int node)
+    //栈: 后进先出
+    public void push(int i) //以队列的逻辑push: 先进先出
     {
         //enqueue
-        stack1.push(node);
+        stack1.push(i);
     }
-    public int pop()
+    public int pop()//以队列的逻辑pop: 先进先出
     {
         //dequeue
         stack2queue();
         return stack2.pop();
     }
-    private void stack2queue()
+    private void stack2queue() //将stack1全部pop到stack2中
     {
         //
-        while(stack2.isEmpty())
+        while(stack2.isEmpty())//起到缓存的作用: stack2中的元素顺序与队列顺序相符, 当需要队列出操作时, 直接从stack2中作栈出操作, stack2空时再将stack1中元素pop进去;
         {
             while(!stack1.isEmpty())
             {
