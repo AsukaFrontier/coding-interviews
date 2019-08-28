@@ -15,11 +15,4 @@ public class Solution
             return fibonacciBegins[n];
         return fibonacciRecursive(n-1, fibonacciBegins)+fibonacciRecursive(n-2, fibonacciBegins);
     }
-    //--------------UNIT TEST----------//
-    public static void main(String...args)
-    {
-        Solution s= new Solution();
-        int testNumber= 20;
-        System.out.println(s.fibonacci(testNumber));
-    }
 }

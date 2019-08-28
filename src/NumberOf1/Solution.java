@@ -1,7 +1,5 @@
 package NumberOf1;
-
 import java.util.Stack;
-
 public class Solution
 {
     public int numberOf1(int n)
