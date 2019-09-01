@@ -1,5 +1,4 @@
 package ReOrderArray;
-
 public class Solution {
     public void reOrderArray(int[] array)
     {
