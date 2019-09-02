@@ -4,10 +4,10 @@ public class Solution {
     {
         if(head==null)
             return null;
-        ListNode tail=findTheTailOfList(head);
+        ListNode tail=findTheTailOfList(head); //链表的尾节点
         ListNode head_of_list=head;//constant pointer pointing at head of the list
         ListNode tail_of_list=tail;//constant pointer pointing at tail of the list
-        while(tail!=head_of_list)
+        while(tail!=head_of_list) //复杂度n^2
         {
             tail.next=findBeforeTheElement(head,tail);
             tail=tail.next;
