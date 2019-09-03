@@ -1,7 +1,6 @@
 package PrintFromTopToBottom;
 import java.util.ArrayList;
 import java.util.LinkedList;
-
 public class Solution {
     public ArrayList<Integer> printFromTopToBottom(TreeNode root)
     {
