@@ -34,27 +34,4 @@ public class Solution {
             this.val=val;
         }
     }
-    //--------------UNIT TEST---------------//
-    public static void main(String[] args)
-    {
-        /**
-         *       0
-         *     /  \
-         *    1    2
-         *   /
-         *  3
-         */
-        Solution s= new Solution();
-        TreeNode tn0= s.new TreeNode(0);
-        TreeNode tn1= s.new TreeNode(1);
-        TreeNode tn2= s.new TreeNode(2);
-        TreeNode tn3= s.new TreeNode(3);
-        tn0.left=tn1;
-        tn0.right=tn2;
-        tn1.left=tn3;
-        //ArrayList<Integer> integers= s.printFromTopToBottom(tn0);
-        ArrayList<Integer> integers= s.printFromTopToBottom(tn3.left);
-        for(Integer i: integers)
-            System.out.print(i+" ");
-    }
 }
