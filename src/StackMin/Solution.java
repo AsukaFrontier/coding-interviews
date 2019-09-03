@@ -1,6 +1,7 @@
 package StackMin;
 import java.util.Arrays;
-public class Solution {
+public class Solution //
+{
     int[] array= new int[99];
     int array_index;
     public void push(int node)
@@ -29,6 +30,8 @@ public class Solution {
         for(int i=0;i<array_index;i++)
             new_array[i]=array[i];
         Arrays.sort(new_array);
+        //Java中Arrays.sort()静态函数使用的是归并排序或快速排序, 对于基本数据类型使用(三向切分的)快速排序, 对于类的对象使用归并排序
+        //因此, arraySort(int[] array)函数的时间复杂度不为O(1)
         return new_array;
     }
     //----------UNIT TEST---------//
