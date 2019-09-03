@@ -1,9 +1,9 @@
 package FindPath;
 import java.util.ArrayList;
-public class SolutionRevise //
+public class ProtoType //
 {
-    //
-    public ArrayList<ArrayList<Integer>> findPath(TreeNode root, int target)
+    ArrayList<Integer> aListInts= new ArrayList<>();
+    public void depthFirstVisit(TreeNode root)
     {
         //
     }
