@@ -1,31 +1,32 @@
 package Convert;
-
-public class Solution {
-    TreeNode head;
+public class Solution //
+{
+    TreeNode lastDLL; //双向链表的迭代指针
     TreeNode real_head;
     public TreeNode convert(TreeNode pRootOfTree)
     {
         convertSub(pRootOfTree);
         return real_head;
     }
-    private void convertSub(TreeNode pRootOfTree)//双向链表从左至右依次构建
+    private void convertSub(TreeNode treeNode)//双向链表从左至右依次构建
     {
-        if(pRootOfTree==null)
+        //无返回值的递归实现
+        if(treeNode==null)
             return ;
         //中序遍历
-        convertSub(pRootOfTree.left);
-        if(head==null)
+        convertSub(treeNode.left);
+        if(lastDLL ==null) //此时应当遇到了树中的最小元素
         {
-            head=pRootOfTree;
-            real_head=pRootOfTree;//双向链表的头结点
+            lastDLL =treeNode;
+            real_head=treeNode;//双向链表的头结点, 此后该指针不再变化
         }
-        else
+        else //lastDLL!=null
         {
-            head.right=pRootOfTree;
-            pRootOfTree.left=head;
-            head=pRootOfTree;
+            lastDLL.right=treeNode;
+            treeNode.left= lastDLL;
+            lastDLL =treeNode;
         }
-        convertSub(pRootOfTree.right);
+        convertSub(treeNode.right);
     }
     private class TreeNode
     {
