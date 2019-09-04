@@ -6,6 +6,6 @@ public class Solution //
     public ArrayList<String> permutation(String str)
     {
         //
-
+        return null;
     }
 }
