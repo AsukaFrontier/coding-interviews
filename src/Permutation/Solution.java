@@ -1,7 +1,6 @@
 package Permutation;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 public class Solution //
 {
     ArrayList<String> aListString= new ArrayList<>();
