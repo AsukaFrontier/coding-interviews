@@ -2,24 +2,24 @@ package StrToInt;
 public class Solution //不能使用字符串库函数的转换整数
 {
     //
-    public int strToInt(String str)
+    public int strToInt(String str) //MAIN
     {
         //return Integer.valueOf(str);
-        if(!isLegalInt(str))
+        if(!isLegalInt(str)) //判断一个给定的字符串是否是合法的表达；
             return 0;
         else
             return strPrintToInt(strToAsciiSequence(str));
     }
-    private int strPrintToInt(int[] ints)//假定String已合法
+    private int strPrintToInt(int[] ints)//假定String已合法, 判定字符串首元素是"+", "-", "0-9"
     {
-        if(ints[0]==43)//+
+        if(ints[0]==43)//"+"
             return strPrintToInt(ints, 1);
-        else if(ints[0]==45)
+        else if(ints[0]==45) //"-"
             return - strPrintToInt(ints, 1);
         else
             return strPrintToInt(ints, 0);
     }
-    private int strPrintToInt(int[] ints, int begin_index)
+    private int strPrintToInt(int[] ints, int begin_index)// strPrintToInt(int[] ints)的辅助方法
     {
         int sum=0;
         for(int i=begin_index;i<ints.length;i++)
@@ -58,6 +58,7 @@ public class Solution //不能使用字符串库函数的转换整数
             ints[i]=(int) chars[i];
         return ints;
     }
+    /**
     private String strToAscii(String str)//String: String to ASCII
     {
         StringBuffer s_buffer= new StringBuffer();
@@ -80,11 +81,12 @@ public class Solution //不能使用字符串库函数的转换整数
             s_buffer.append((char) Integer.parseInt(chars[i]));
         return s_buffer.toString();
     }
+     */
     //---------------------------------------------//
     public static void main(String[] args)
     {
         Solution s= new Solution();
-        String str="1";
+        String str="-123";
         /**
         if(s.isLegalInt(str))
             System.out.println("Is legal int.");
